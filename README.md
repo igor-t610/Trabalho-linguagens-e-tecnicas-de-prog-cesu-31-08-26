@@ -37,4 +37,4 @@ Se escolher a opção 6, o sistema encerrará o programa.
 As operações de erro, como funcionário não cadastrado, identificação inválida ou tentativa de registrar uma saída sem uma entrada correspondente, exibirão mensagens claras ao usuário e retornarão ao menu principal.
 
 # 3 - Fluxograma da Lógica do Sistema
-![Fluxograma Principal(./Imagens/fluxograma.png)
+![Fluxograma Principal(Imagens/fluxograma.png)
