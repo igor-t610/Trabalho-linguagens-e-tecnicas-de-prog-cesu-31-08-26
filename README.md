@@ -12,7 +12,7 @@ O projeto consiste em um sistema de controle de ponto de funcionários desenvolv
 ![Fluxograma Principal(./Imagens/fluxograma.pdf)
 
 
-#2 - Fluxo de Utilização Esperado para o Sistema
+#2 Fluxo de Utilização Esperado para o Sistema
 
 Ao iniciar o programa, o usuário visualizará um menu principal com as opções:
 
