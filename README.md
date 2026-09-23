@@ -1,4 +1,4 @@
-# Trabalho de integração
+# Controle de pontos de colaboradores para empresas
 Respositorio para o trabalho da diciplina linguagens e tecnicas de progamação
 
 Carlos Eduardo
