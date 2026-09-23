@@ -1,15 +1,16 @@
 # Controle de pontos de colaboradores para empresas
-Respositorio para o trabalho da diciplina linguagens e tecnicas de progamação
+Respositorio para o trabalho da diciplina linguagens e tecnicas de progamação - ESOFT_LING-TEC_PROG 
 
-Carlos Eduardo  
+Carlos Eduardo - 260127442
 
-Carlos Penso  
+Carlos Penso - 26014283-2
 
-Igor Toy  
+Igor Toy - 26013242-2
 
-Matheus Roberto  
+Matheus Roberto - 26013990-2
  
-Victor Gabriel  
+Victor Gabriel - 26005282-2
+
 # 1 - Descrição do sistema
 
 O projeto consiste em um sistema de controle de ponto de funcionários desenvolvido em linguagem C. O sistema permitirá o cadastro prévio dos colaboradores e o registro diário e individualizado dos horários de entrada e saída de cada trabalhador. O programa utilizará arquivos binários para persistência de dados, garantindo que as informações de cadastro e os históricos de batidas de ponto não sejam perdidos ao fechar a aplicação. O foco principal é resolver a problemática do controle manual da jornada de trabalho (como o uso de planilhas ou livros de ponto em papel), automatizando o registro seguro dos horários e facilitando o acompanhamento das horas trabalhadas por cada funcionário.
