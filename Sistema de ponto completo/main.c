@@ -29,6 +29,14 @@ int main() {
             case 3:
                 buscarFuncionarioPorNome();
                 break;
+            
+            case 4:
+                registrarEntrada();
+                break;
+            case 5:
+                registrarSaida();
+                break;
+            
             case 6:
                 listarRegistrosPonto();
                 break;
@@ -38,12 +46,6 @@ int main() {
             default:
                 printf("\nOpcao invalida ou em implementacao!\n");
 
-            case 4:
-                registrarEntrada();
-                break;
-            case 5:
-                registrarSaida();
-                break;
         }
     } while (opcao != 0);
 
