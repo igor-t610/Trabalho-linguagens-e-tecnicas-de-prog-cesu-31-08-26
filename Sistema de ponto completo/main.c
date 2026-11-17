@@ -26,6 +26,9 @@ int main() {
             case 2:
                 listarFuncionarios();
                 break;
+            case 3:
+                buscarFuncionarioPorNome();
+                break;
             case 0:
                 printf("\nEncerrando o sistema...\n");
                 break;
