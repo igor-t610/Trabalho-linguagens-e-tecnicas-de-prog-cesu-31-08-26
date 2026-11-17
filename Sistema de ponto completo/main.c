@@ -20,6 +20,12 @@ int main() {
         scanf("%d", &opcao);
 
         switch (opcao) {
+            case 1:
+                cadastrarFuncionario();
+                break;
+            case 2:
+                listarFuncionarios();
+                break;
             case 0:
                 printf("\nEncerrando o sistema...\n");
                 break;
