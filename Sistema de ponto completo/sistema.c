@@ -130,3 +130,29 @@ void buscarFuncionarioPorNome() {
 
     fclose(arquivo);
 }
+void listarRegistrosPonto() {
+    FILE *arquivo;
+    Registroponto reg;
+    int encontrou = 0;
+
+    arquivo = fopen("pontos.dat", "rb");
+    if (arquivo == NULL) {
+        printf("\nErro: Nenhum registro de ponto encontrado (arquivo inexistente).\n");
+        return;
+    }
+
+    printf("\n=== HISTORICO DE PONTOS ===\n");
+    while (fread(&reg, sizeof(Registroponto), 1, arquivo) == 1) {
+        printf("Reg #%d | Func ID: %d | Data: %s | Entrada: %s | Saida: %s | Total: %.2fh | Extras: %.2fh | Status: %s\n",
+               reg.id_registro, reg.id_funcionario, reg.data, reg.hora_entrada, reg.hora_saida,
+               reg.total_horas_trabalhadas, reg.horas_extras,
+               reg.ativo == 1 ? "ABERTO" : "ENCERRADO");
+        encontrou = 1;
+    }
+
+    if (!encontrou) {
+        printf("A busca nao retornou nenhum registro de ponto.\n");
+    }
+
+    fclose(arquivo);
+}
