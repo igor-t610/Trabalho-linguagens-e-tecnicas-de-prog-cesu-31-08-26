@@ -37,6 +37,13 @@ int main() {
                 break;
             default:
                 printf("\nOpcao invalida ou em implementacao!\n");
+
+            case 4:
+                registrarEntrada();
+                break;
+            case 5:
+                registrarSaida();
+                break;
         }
     } while (opcao != 0);
 
