@@ -29,6 +29,9 @@ int main() {
             case 3:
                 buscarFuncionarioPorNome();
                 break;
+            case 6:
+                listarRegistrosPonto();
+                break;
             case 0:
                 printf("\nEncerrando o sistema...\n");
                 break;
