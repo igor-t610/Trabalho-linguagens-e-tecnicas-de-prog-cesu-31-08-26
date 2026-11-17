@@ -101,3 +101,32 @@ void listarFuncionarios() {
 
     fclose(arquivo);
 }
+void buscarFuncionarioPorNome() {
+    FILE *arquivo;
+    Funcionario f;
+    char termo[100];
+    int encontrou = 0;
+
+    arquivo = fopen("funcionarios.dat", "rb");
+    if (arquivo == NULL) {
+        printf("\nErro ao abrir o arquivo de funcionarios. Cadastre alguem primeiro.\n");
+        return;
+    }
+
+    printf("\nDigite o nome (ou parte do nome) para buscar: ");
+    scanf(" %99[^\n]", termo);
+
+    printf("\n=== RESULTADO DA BUSCA ===\n");
+    while (fread(&f, sizeof(Funcionario), 1, arquivo) == 1) {
+        if (f.ativo == 1 && strstr(f.nome, termo) != NULL) {
+            printf("ID: %d | Nome: %s | Jornada: %.2f h\n", f.id, f.nome, f.jornada_diaria);
+            encontrou = 1;
+        }
+    }
+
+    if (!encontrou) {
+        printf("A busca por '%s' nao teve resultados.\n", termo);
+    }
+
+    fclose(arquivo);
+}
