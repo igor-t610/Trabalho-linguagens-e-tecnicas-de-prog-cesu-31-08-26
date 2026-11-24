@@ -1,7 +1,7 @@
 # Controle de pontos de colaboradores para empresas
 Respositorio para o trabalho da diciplina linguagens e tecnicas de progamação - ESOFT_LING-TEC_PROG 
 
-Carlos Eduardo - 260127442
+Carlos Eduardo - 26012744-2
 
 Carlos Penso - 26014283-2
 
