@@ -112,7 +112,7 @@ int main() {
                     printf("A busca por '%s' nao retornou resultados.\n", termo_busca);
                 }
                 break;
-case 4:
+            case 4:
                 printf("\n=== REGISTRAR ENTRADA ===\n");
                 if (total_pontos >= 200) {
                     printf("\nErro: Limite de registros atingido!\n");
@@ -169,7 +169,7 @@ case 4:
                 }
                 break;
 
-case 5:
+            case 5:
                 printf("\n=== REGISTRAR SAIDA ===\n");
                 printf("Digite o ID do funcionario: ");
                 scanf("%d", &id_digitado);
