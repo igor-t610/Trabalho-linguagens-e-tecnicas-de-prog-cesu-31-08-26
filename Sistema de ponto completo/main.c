@@ -43,7 +43,51 @@ int main() {
 
         switch (opcao) {
 
-            // ---> COLAR AQUI O CODIGO DO INTEGRANTE 2 (case 1 e case 2)
+            case 1:
+                printf("\n=== CADASTRO DE FUNCIONARIO ===\n");
+                if (total_func >= 100) {
+                    printf("\nErro: Limite maximo de funcionarios atingido!\n");
+                    break;
+                }
+
+                printf("Digite o ID: ");
+                scanf("%d", &id_digitado);
+
+                // Laço para verificar se o ID ja existe no vetor
+                existe = 0;
+                for (i = 0; i < total_func; i++) {
+                    if (id_func[i] == id_digitado) {
+                        existe = 1;
+                    }
+                }
+
+                if (existe == 1) {
+                    printf("\nErro: Ja existe um funcionario com este ID!\n");
+                } else {
+                    id_func[total_func] = id_digitado;
+
+                    printf("Digite o nome: ");
+                    scanf(" %99[^\n]", nome_func[total_func]);
+
+                    printf("Digite a jornada diaria (em horas, ex: 8.0): ");
+                    scanf("%f", &jornada_func[total_func]);
+
+                    total_func++;
+                    printf("\nFuncionario cadastrado com sucesso!\n");
+                }
+                break;
+
+            case 2:
+                printf("\n=== LISTA DE FUNCIONARIOS ===\n");
+                if (total_func == 0) {
+                    printf("Nenhum funcionario cadastrado ainda.\n");
+                } else {
+                    for (i = 0; i < total_func; i++) {
+                        printf("ID: %d | Nome: %s | Jornada Diaria: %.2f h\n",
+                               id_func[i], nome_func[i], jornada_func[i]);
+                    }
+                }
+                break;
 
             // ---> COLAR AQUI O CODIGO DO INTEGRANTE 3 (case 3 e case 6)
 
