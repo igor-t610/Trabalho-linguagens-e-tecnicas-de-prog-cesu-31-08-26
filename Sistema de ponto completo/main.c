@@ -112,6 +112,62 @@ int main() {
                     printf("A busca por '%s' nao retornou resultados.\n", termo_busca);
                 }
                 break;
+case 4:
+                printf("\n=== REGISTRAR ENTRADA ===\n");
+                if (total_pontos >= 200) {
+                    printf("\nErro: Limite de registros atingido!\n");
+                    break;
+                }
+
+                printf("Digite o ID do funcionario: ");
+                scanf("%d", &id_digitado);
+
+                // Verifica se o funcionario existe
+                existe = 0;
+                for (i = 0; i < total_func; i++) {
+                    if (id_func[i] == id_digitado) {
+                        existe = 1;
+                    }
+                }
+
+                if (existe == 0) {
+                    printf("\nErro: Funcionario nao encontrado!\n");
+                    break;
+                }
+
+                // Verifica se ja tem ponto aberto para este ID
+                encontrou = 0;
+                for (i = 0; i < total_pontos; i++) {
+                    if (ponto_id_func[i] == id_digitado && ponto_aberto[i] == 1) {
+                        encontrou = 1;
+                    }
+                }
+
+                if (encontrou == 1) {
+                    printf("\nErro: Este funcionario ja possui uma entrada em aberto!\n");
+                } else {
+                    ponto_id_func[total_pontos] = id_digitado;
+
+                    printf("Digite a data (DD/MM/AAAA): ");
+                    scanf(" %14s", ponto_data[total_pontos]);
+
+                    printf("Digite a HORA de entrada (0 a 23): ");
+                    scanf("%d", &ponto_horarios[total_pontos][0]);
+
+                    printf("Digite o MINUTO de entrada (0 a 59): ");
+                    scanf("%d", &ponto_horarios[total_pontos][1]);
+
+                    // Zera os dados de saida na matriz ate o funcionario encerrar o turno
+                    ponto_horarios[total_pontos][2] = 0;
+                    ponto_horarios[total_pontos][3] = 0;
+                    ponto_horas[total_pontos][0] = 0.0f;
+                    ponto_horas[total_pontos][1] = 0.0f;
+                    ponto_aberto[total_pontos] = 1;
+
+                    total_pontos++;
+                    printf("\nEntrada registrada com sucesso! (Registro #%d aberto)\n", total_pontos);
+                }
+                break;
 
 case 5:
                 printf("\n=== REGISTRAR SAIDA ===\n");
@@ -195,12 +251,8 @@ case 5:
                         }
                     }
                 }
-                break;
-
-            // ---> COLAR AQUI O CODIGO DO INTEGRANTE 4 (case 4)
-
-            // ---> COLAR AQUI O CODIGO DO INTEGRANTE 5 (case 5)
-
+              break;
+            
             case 0:
                 printf("\nEncerrando o sistema...\n");
                 break;
