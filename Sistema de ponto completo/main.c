@@ -89,7 +89,50 @@ int main() {
                 }
                 break;
 
-            // ---> COLAR AQUI O CODIGO DO INTEGRANTE 3 (case 3 e case 6)
+            case 3:
+                printf("\n=== BUSCAR FUNCIONARIO POR NOME ===\n");
+                if (total_func == 0) {
+                    printf("Erro: Nenhum funcionario cadastrado para buscar.\n");
+                    break;
+                }
+
+                printf("Digite o nome exato para buscar: ");
+                scanf(" %99[^\n]", termo_busca);
+
+                encontrou = 0;
+                for (i = 0; i < total_func; i++) {
+                    if (strcmp(nome_func[i], termo_busca) == 0) {
+                        printf("ID: %d | Nome: %s | Jornada: %.2f h\n",
+                               id_func[i], nome_func[i], jornada_func[i]);
+                        encontrou = 1;
+                    }
+                }
+
+                if (encontrou == 0) {
+                    printf("A busca por '%s' nao retornou resultados.\n", termo_busca);
+                }
+                break;
+
+            case 6:
+                printf("\n=== HISTORICO DE PONTOS ===\n");
+                if (total_pontos == 0) {
+                    printf("Nenhum registro de ponto encontrado.\n");
+                } else {
+                    for (i = 0; i < total_pontos; i++) {
+                        if (ponto_aberto[i] == 1) {
+                            printf("Reg #%d | Func ID: %d | Data: %s | Entrada: %02d:%02d | Saida: --:-- | Status: ABERTO\n",
+                                   i + 1, ponto_id_func[i], ponto_data[i],
+                                   ponto_horarios[i][0], ponto_horarios[i][1]);
+                        } else {
+                            printf("Reg #%d | Func ID: %d | Data: %s | Entrada: %02d:%02d | Saida: %02d:%02d | Total: %.2fh | Extras: %.2fh | Status: ENCERRADO\n",
+                                   i + 1, ponto_id_func[i], ponto_data[i],
+                                   ponto_horarios[i][0], ponto_horarios[i][1],
+                                   ponto_horarios[i][2], ponto_horarios[i][3],
+                                   ponto_horas[i][0], ponto_horas[i][1]);
+                        }
+                    }
+                }
+                break;
 
             // ---> COLAR AQUI O CODIGO DO INTEGRANTE 4 (case 4)
 
