@@ -113,6 +113,69 @@ int main() {
                 }
                 break;
 
+case 5:
+                printf("\n=== REGISTRAR SAIDA ===\n");
+                printf("Digite o ID do funcionario: ");
+                scanf("%d", &id_digitado);
+
+                // Procura a jornada diaria do funcionario
+                jornada_atual = 8.0f;
+                for (i = 0; i < total_func; i++) {
+                    if (id_func[i] == id_digitado) {
+                        jornada_atual = jornada_func[i];
+                    }
+                }
+
+                // Procura o ponto em aberto desse funcionario
+                encontrou = 0;
+                for (i = 0; i < total_pontos; i++) {
+                    if (ponto_id_func[i] == id_digitado && ponto_aberto[i] == 1) {
+                        encontrou = 1;
+                        printf("Entrada encontrada na data %s as %02d:%02d\n",
+                               ponto_data[i], ponto_horarios[i][0], ponto_horarios[i][1]);
+
+                        printf("Digite a HORA de saida (0 a 23): ");
+                        scanf("%d", &ponto_horarios[i][2]);
+
+                        printf("Digite o MINUTO de saida (0 a 59): ");
+                        scanf("%d", &ponto_horarios[i][3]);
+
+                        // Converte horas para minutos e calcula o total trabalhado
+                        min_entrada = (ponto_horarios[i][0] * 60) + ponto_horarios[i][1];
+                        min_saida = (ponto_horarios[i][2] * 60) + ponto_horarios[i][3];
+                        diferenca_min = min_saida - min_entrada;
+
+                        if (diferenca_min < 0) {
+                            diferenca_min = diferenca_min + (24 * 60);
+                        }
+
+                        horas_trab = diferenca_min / 60.0f;
+                        ponto_horas[i][0] = horas_trab;
+
+                        // Calcula horas extras na coluna 1 da matriz
+                        if (horas_trab > jornada_atual) {
+                            ponto_horas[i][1] = horas_trab - jornada_atual;
+                        } else {
+                            ponto_horas[i][1] = 0.0f;
+                        }
+
+                        ponto_aberto[i] = 0; // Fecha o registro
+
+                        printf("\nSaida registrada com sucesso!\n");
+                        printf("Total trabalhado: %.2f h | Horas extras: %.2f h\n",
+                               ponto_horas[i][0], ponto_horas[i][1]);
+                        break;
+                    }
+                }
+
+                if (encontrou == 0) {
+                    printf("\nAviso: Nenhum registro de entrada em aberto para este ID.\n");
+                }
+                break;
+
+
+
+            
             case 6:
                 printf("\n=== HISTORICO DE PONTOS ===\n");
                 if (total_pontos == 0) {
