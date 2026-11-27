@@ -174,7 +174,7 @@ int main() {
                 printf("Digite o ID do funcionario: ");
                 scanf("%d", &id_digitado);
 
-                // Procura a jornada diaria do funcionario
+            
                 jornada_atual = 8.0f;
                 for (i = 0; i < total_func; i++) {
                     if (id_func[i] == id_digitado) {
@@ -196,7 +196,7 @@ int main() {
                         printf("Digite o MINUTO de saida (0 a 59): ");
                         scanf("%d", &ponto_horarios[i][3]);
 
-                        // Converte horas para minutos e calcula o total trabalhado
+                        
                         min_entrada = (ponto_horarios[i][0] * 60) + ponto_horarios[i][1];
                         min_saida = (ponto_horarios[i][2] * 60) + ponto_horarios[i][3];
                         diferenca_min = min_saida - min_entrada;
